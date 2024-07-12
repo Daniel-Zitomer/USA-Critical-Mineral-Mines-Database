@@ -127,7 +127,6 @@
             if (bounds_group.getLayers().length) {
                 map.fitBounds(bounds_group.getBounds());
             }
-            map.setMaxBounds(map.getBounds());
         }
         map.createPane('pane_OpenStreetMap_0');
         map.getPane('pane_OpenStreetMap_0').style.zIndex = 400;
@@ -5453,7 +5452,8 @@
             {label: '<img src="legend/yellow_dummy_5.png" /> Nickel Mines', layer: layer_NickelMines_6},
             {label: '<img src="legend/CopperMines_5_0100.png" /> Copper Mines', layer: layer_CopperMines_5},
             {label: '<img src="legend/LithiumMines_4.png" /> Lithium Mines', layer: layer_LithiumMines_4},
-            {label: '<img src="legend/purple_dummy_4.png" /> Justice40 Disadvantaged Tracts', layer: layer_Justice40DisadvantagedTracts_2},]
+            {label: '<img src="legend/purple_dummy_4.png" /> Justice40 Disadvantaged Tracts', layer: layer_Justice40DisadvantagedTracts_2},,
+            {label: "OpenStreetMap", layer: layer_OpenStreetMap_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
