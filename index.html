@@ -190,7 +190,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(240,241,227,1.0)',
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_ContiguousUSA_1');
@@ -198,7 +198,7 @@
         map.getPane('pane_ContiguousUSA_1').style['mix-blend-mode'] = 'normal';
         var layer_ContiguousUSA_1 = new L.geoJson(json_ContiguousUSA_1, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_ContiguousUSA_1',
             layerName: 'layer_ContiguousUSA_1',
             pane: 'pane_ContiguousUSA_1',
@@ -216,6 +216,16 @@
                                               {pane: 'pane_Justice40DisadvantagedTracts_2'});
         bounds_group.addLayer(layer_Justice40DisadvantagedTracts_2);
         map.addLayer(layer_Justice40DisadvantagedTracts_2);
+        function pop_ContiguousStates_3(feature, layer) {
+            var popupContent = '<table>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
         function style_ContiguousStates_3_0() {
             return {
                 pane: 'pane_ContiguousStates_3',
@@ -228,7 +238,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(225,89,137,0.0)',
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_ContiguousStates_3');
@@ -236,7 +246,7 @@
         map.getPane('pane_ContiguousStates_3').style['mix-blend-mode'] = 'normal';
         var layer_ContiguousStates_3 = new L.geoJson(json_ContiguousStates_3, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_ContiguousStates_3',
             layerName: 'layer_ContiguousStates_3',
             pane: 'pane_ContiguousStates_3',
@@ -5439,8 +5449,7 @@
             {label: '<img src="legend/yellow_dummy_5.png" /> Nickel Mines', layer: layer_NickelMines_6},
             {label: '<img src="legend/CopperMines_5_0100.png" /> Copper Mines', layer: layer_CopperMines_5},
             {label: '<img src="legend/LithiumMines_4.png" /> Lithium Mines', layer: layer_LithiumMines_4},
-            {label: '<img src="legend/purple_dummy_4.png" /> Justice40 Disadvantaged Tracts', layer: layer_Justice40DisadvantagedTracts_2},,
-            {label: "OpenStreetMap", layer: layer_OpenStreetMap_0},]
+            {label: '<img src="legend/purple_dummy_4.png" /> Justice40 Disadvantaged Tracts', layer: layer_Justice40DisadvantagedTracts_2},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
