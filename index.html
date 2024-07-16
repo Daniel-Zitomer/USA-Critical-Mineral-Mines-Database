@@ -218,9 +218,6 @@
         map.addLayer(layer_Justice40DisadvantagedTracts_2);
         function pop_ContiguousStates_3(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['state_name'] !== null ? autolinker.link(feature.properties['state_name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
