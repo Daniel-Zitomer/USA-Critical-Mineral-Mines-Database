@@ -216,16 +216,6 @@
                                               {pane: 'pane_Justice40DisadvantagedTracts_2'});
         bounds_group.addLayer(layer_Justice40DisadvantagedTracts_2);
         map.addLayer(layer_Justice40DisadvantagedTracts_2);
-        function pop_ContiguousStates_3(feature, layer) {
-            var popupContent = '<table>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
         function style_ContiguousStates_3_0() {
             return {
                 pane: 'pane_ContiguousStates_3',
